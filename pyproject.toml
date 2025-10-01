@@ -1,0 +1,36 @@
+[project]
+name = "task-manager"
+version = "2025.10"
+dependencies = [
+    "alembic>=1.16.5",
+    "asyncpg==0.30.0",
+    "fastapi>=0.118.0",
+    "uvicorn[standard]>=0.37.0",
+    "SQLAlchemy==2.0.43",
+    "alembic==1.16.5",
+    "pydantic==2.11.9",
+    "pydantic-settings==2.11.0",
+    "python-jose[cryptography]==3.3.0",
+    "passlib[bcrypt]==1.7.4",
+    "python-multipart==0.0.20",
+]
+requires-python = ">= 3.13"
+authors = [{ name = "Andrii Berestov", email = "andrii@berestov.dev" }]
+readme = "readme.md"
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "pytest-asyncio", "ruff"]
+
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+target-version = "py313"
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "alembic/versions",
+]
+
